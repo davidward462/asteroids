@@ -1,7 +1,13 @@
-[gd_scene format=3 uid="uid://cali3d76oxemv"]
+[gd_scene load_steps=2 format=3 uid="uid://cali3d76oxemv"]
+
+[ext_resource type="Texture2D" uid="uid://bvj2wdi2l71eo" path="res://assets/sprites/ship_no_thrust.png" id="1_lkiv7"]
 
 [node name="Player" type="CharacterBody2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(2.7, -0.4)
+scale = Vector2(1.02227, 0.73625)
+polygon = PackedVector2Array(-10.5769, -10.5263, 10.5769, 0, -10.5769, 10.5263)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lkiv7")
