@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6s3kly1o6ihm"]
+
+[ext_resource type="Texture2D" uid="uid://b8jd8xxptkyyt" path="res://assets/sprites/asteroid_1.png" id="1_4asaq"]
+[ext_resource type="Script" path="res://scripts/asteroid.gd" id="1_xipkw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k0isl"]
+radius = 25.0799
+
+[node name="Asteroid" type="RigidBody2D"]
+collision_layer = 2
+gravity_scale = 0.0
+script = ExtResource("1_xipkw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4asaq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_k0isl")
+
+[node name="velocity_label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="rotation_label" type="Label" parent="."]
+offset_top = -25.0
+offset_right = 40.0
+offset_bottom = -2.0
