@@ -39,7 +39,10 @@ func _physics_process(delta: float) -> void:
 		
 		drag_vector = -1 * velocity * drag_coef
 		velocity += drag_vector
-		
 
 	#move_and_slide()
-	move_and_collide(velocity * delta)
+	var collision = move_and_collide(velocity * delta)
+	
+	if collision:
+		print("collision")
+		#self.queue_free()

@@ -23,7 +23,10 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	move_and_collide(velocity * delta)
+	var collision = move_and_collide(velocity * delta)
+	
+	if collision:
+		self.queue_free()
 	
 	# Wrap position on screen bounds
 	position.x = wrapf(position.x, 0, screen_size.x)
