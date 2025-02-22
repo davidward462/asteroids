@@ -5,7 +5,6 @@ extends CharacterBody2D
 @onready var rotation_label: Label = $RotationLabel
 @onready var speed_label: Label = $speedLabel
 
-
 @onready var screen_size = get_viewport_rect().size
 
 var rotation_speed = 3.0
@@ -13,11 +12,6 @@ var rotation_speed = 3.0
 var force = 3.0
 var drag_vector = Vector2.ZERO
 var drag_coef = 0.01
-
-var v = Vector2.ZERO
-var acceleration = 1.0
-var drag = 0.5
-var speed = 0.0
 
 const MAX_SPEED = 5.0
 
@@ -31,7 +25,6 @@ func _do_rotation(delta: float) -> void:
 func _process(delta: float) -> void:
 	velocity_label.text = str(velocity)
 	rotation_label.text = str(rotation)
-	speed_label.text = str(speed)
 
 func _physics_process(delta: float) -> void:
 	
