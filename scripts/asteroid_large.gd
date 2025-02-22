@@ -26,6 +26,7 @@ func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(velocity * delta)
 	
 	if collision:
+		# TODO: sometimes asteroid does not free itself on collision.
 		self.queue_free()
 	
 	# Wrap position on screen bounds
