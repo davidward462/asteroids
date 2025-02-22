@@ -12,3 +12,7 @@ func _process(delta: float) -> void:
 	# Close window if quit key is pressed.s
 	if Input.is_action_pressed("quit"):
 		get_tree().quit()
+	
+	# Reset scene on 'R'
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
