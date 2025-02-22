@@ -46,3 +46,7 @@ func _physics_process(delta: float) -> void:
 	if collision:
 		print("collision")
 		#self.queue_free()
+		
+	# Wrap position on screen bounds
+	position.x = wrapf(position.x, 0, screen_size.x)
+	position.y = wrapf(position.y, 0, screen_size.y)
