@@ -6,13 +6,15 @@ extends CharacterBody2D
 @onready var rotation_label: Label = $RotationLabel
 @onready var velocity_label: Label = $VelocityLabel
 
-var speed = 10.0
+const MAX_SPEED = 130.0
+const MIN_SPEED = 20.0
+var speed
 var dir = 0.0
 
 func _ready() -> void:
 	randomize()
 	dir = randf_range(PI, -PI)
-	speed = randf_range(20.0, 130.0)
+	speed = randf_range(MIN_SPEED, MAX_SPEED)
 	velocity = Vector2(speed, 0).rotated(dir)
 	
 func _process(delta: float) -> void:
