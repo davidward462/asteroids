@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+# For shooting
+@export var Bullet : PackedScene
+
 # for testing
 @onready var velocity_label: Label = $VelocityLabel
 @onready var rotation_label: Label = $RotationLabel
@@ -22,12 +25,21 @@ func _do_rotation(delta: float) -> void:
 	if Input.is_action_pressed("rotate_counterclockwise"):
 		rotation -= rotation_speed * delta
 		
+func shoot():
+	var b = Bullet.instantiate()
+	owner.add_child(b)
+	b.transform = $GunPosition.global_transform
+		
 func _process(delta: float) -> void:
 	velocity_label.text = str(velocity)
 	rotation_label.text = str(rotation)
+	
+	# Shoot
+	if Input.is_action_just_pressed("shoot"):
+		shoot()
 
 func _physics_process(delta: float) -> void:
-	
+	pass # Replace with function body.
 	_do_rotation(delta)
 	
 	if Input.is_action_pressed("accelerate"):
