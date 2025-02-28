@@ -27,7 +27,7 @@ func _do_rotation(delta: float) -> void:
 		
 func shoot():
 	var b = Bullet.instantiate()
-	owner.add_child(b)
+	get_tree().get_root().add_child(b)
 	b.transform = $GunPosition.global_transform
 		
 func _process(delta: float) -> void:
