@@ -9,6 +9,8 @@ radius = 25.0799
 [node name="Asteroid" type="RigidBody2D"]
 collision_layer = 2
 gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 10
 script = ExtResource("1_xipkw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -25,3 +27,5 @@ offset_bottom = 23.0
 offset_top = -25.0
 offset_right = 40.0
 offset_bottom = -2.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

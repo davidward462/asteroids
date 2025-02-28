@@ -12,9 +12,11 @@ var speed
 var dir = 0.0
 
 func _ready() -> void:
+	print("asteroid ready")
 	randomize()
 	
-	speed = randf_range(MIN_SPEED, MAX_SPEED)
+	#speed = randf_range(MIN_SPEED, MAX_SPEED)
+	speed = 0
 	dir = randf_range(PI, -PI)
 	
 	# Make asteroid move at a constant velocity and not slow down.
@@ -30,3 +32,12 @@ func _process(delta: float) -> void:
 	# Wrap position on screen bounds
 	position.x = wrapf(position.x, 0, screen_size.x)
 	position.y = wrapf(position.y, 0, screen_size.y)
+	
+# Destroy asteroid on collision
+func _on_body_entered(body: Node) -> void:
+	print("collided with asteroid")
+	
+	# temporary player death method.
+	# TODO: set up actual player death method. 
+	body.queue_free()
+	#queue_free()

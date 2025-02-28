@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://benepvkd435s1" path="res://scenes/bullet.tscn" id="2_hnqr1"]
 
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 2
+collision_mask = 0
 script = ExtResource("1_42tg3")
 Bullet = ExtResource("2_hnqr1")
 
