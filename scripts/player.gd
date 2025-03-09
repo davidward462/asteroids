@@ -31,8 +31,10 @@ func shoot():
 	b.transform = $GunPosition.global_transform
 		
 func _process(delta: float) -> void:
-	velocity_label.text = str(velocity)
-	rotation_label.text = str(rotation)
+	var v_x = velocity.x
+	var v_y = velocity.y
+	velocity_label.text = "(%.1f, %.1f)" % [v_x, v_y]
+	rotation_label.text = "%.2f" % rotation
 	
 	# Shoot
 	if Input.is_action_just_pressed("shoot"):
