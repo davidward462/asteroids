@@ -44,8 +44,8 @@ func _process(delta: float) -> void:
 	
 	# TODO: remove these when no longer needed.
 	#velocity_label.text = "(%.1f, %.1f)" % [v_x, v_y]
-	rotation_label.text = "%.2f" % regen
-	velocity_label.text = "%d" % ammo
+	#rotation_label.text = "%.2f" % regen
+	#velocity_label.text = "%d" % ammo
 	
 	if ammo < 5:
 		# if we have less than max ammo
