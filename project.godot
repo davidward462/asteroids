@@ -23,6 +23,10 @@ window/size/viewport_height=640
 window/size/mode=4
 window/stretch/mode="viewport"
 
+[global_group]
+
+asteroids=""
+
 [input]
 
 shoot={
