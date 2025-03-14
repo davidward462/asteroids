@@ -7,7 +7,7 @@ var ammo = max_ammo
 var regen = 0
 var max_regen = 30
 
-# for testing
+# TODO: remove later
 @onready var velocity_label: Label = $VelocityLabel
 @onready var rotation_label: Label = $RotationLabel
 @onready var speed_label: Label = $speedLabel
@@ -76,6 +76,7 @@ func _physics_process(delta: float) -> void:
 		drag_vector = -1 * velocity * drag_coef
 		velocity += drag_vector
 
+	# TODO: figure out collision.
 	#move_and_slide()
 	var collision = move_and_collide(velocity * delta)
 	
