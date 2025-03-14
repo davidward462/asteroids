@@ -24,7 +24,6 @@ func gen_asteroid_coords() -> Vector2:
 	
 func spawn_asteroid() -> void:
 	var pos = gen_asteroid_coords()
-	print("spawn asteroid")
 	var asteroid = asteroid_scene.instantiate()
 	add_child(asteroid)
 	asteroid.position = pos
