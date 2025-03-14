@@ -39,7 +39,7 @@ func _ready() -> void:
 	var player_start_pos = Vector2(screen_size.x/2, screen_size.y/2)
 	
 	# Spawn player in the center of the viewport.
-	# spawn_player(screen_size, player_start_pos)
+	spawn_player(player_start_pos)
 	
 	# Spawn asteroids
 	spawn_asteroids(asteroid_count)
