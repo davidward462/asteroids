@@ -5,7 +5,7 @@ extends CharacterBody2D
 var max_ammo = 5
 var ammo = max_ammo
 var regen = 0
-var max_regen = 30
+var max_regen = 20
 
 # TODO: remove later
 @onready var velocity_label: Label = $VelocityLabel
@@ -14,13 +14,14 @@ var max_regen = 30
 
 @onready var screen_size = get_viewport_rect().size
 
-var rotation_speed = 3.0
+var rotation_speed = 4.5
 
-var force = 3.0
+var force = 4.0
 var drag_vector = Vector2.ZERO
-var drag_coef = 0.01
+var drag_coef = 0.008
 
-const MAX_SPEED = 5.0
+#const MAX_SPEED = 5.0
+const MAX_SPEED = Vector2(5.0, 5.0)
 
 func _do_rotation(delta: float) -> void:
 	if Input.is_action_pressed("rotate_clockwise"):
