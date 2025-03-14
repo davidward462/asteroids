@@ -12,12 +12,10 @@ var speed
 var dir = 0.0
 
 func _ready() -> void:
-	#add_to_group("asteroids")
-	print("asteroid ready")
+	add_to_group("asteroids")
 	randomize()
 	
 	speed = randf_range(MIN_SPEED, MAX_SPEED)
-	#speed = 0
 	dir = randf_range(PI, -PI)
 	
 	# Make asteroid move at a constant velocity and not slow down.
