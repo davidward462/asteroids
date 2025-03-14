@@ -33,8 +33,10 @@ func shoot():
 func _process(delta: float) -> void:
 	var v_x = velocity.x
 	var v_y = velocity.y
-	velocity_label.text = "(%.1f, %.1f)" % [v_x, v_y]
-	rotation_label.text = "%.2f" % rotation
+	
+	# TODO: remove these when no longer needed.
+	#velocity_label.text = "(%.1f, %.1f)" % [v_x, v_y]
+	#rotation_label.text = "%.2f" % rotation
 	
 	# Shoot
 	if Input.is_action_just_pressed("shoot"):

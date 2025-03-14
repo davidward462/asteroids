@@ -27,8 +27,10 @@ func _ready() -> void:
 	linear_velocity = Vector2(speed, 0).rotated(dir)
 	
 func _process(delta: float) -> void:
-	rotation_label.text = str(dir)
-	velocity_label.text = str(linear_velocity)
+	
+	# TODO: remove these when no longer needed.
+	#rotation_label.text = str(dir)
+	#velocity_label.text = str(linear_velocity)
 	
 	# Wrap position on screen bounds
 	position.x = wrapf(position.x, 0, screen_size.x)
