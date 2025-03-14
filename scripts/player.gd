@@ -2,6 +2,10 @@ extends CharacterBody2D
 
 # For shooting
 @export var Bullet : PackedScene
+var max_ammo = 5
+var ammo = max_ammo
+var regen = 0
+var max_regen = 60
 
 # for testing
 @onready var velocity_label: Label = $VelocityLabel
@@ -26,21 +30,38 @@ func _do_rotation(delta: float) -> void:
 		rotation -= rotation_speed * delta
 		
 func shoot():
+	ammo -= 1
+	regen = 0
 	var b = Bullet.instantiate()
 	get_tree().get_root().add_child(b)
 	b.transform = $GunPosition.global_transform
 		
 func _process(delta: float) -> void:
+	# what does this do? Why is it not in _physics_process()?
 	var v_x = velocity.x
 	var v_y = velocity.y
 	
 	# TODO: remove these when no longer needed.
 	#velocity_label.text = "(%.1f, %.1f)" % [v_x, v_y]
-	#rotation_label.text = "%.2f" % rotation
+	rotation_label.text = "%.2f" % regen
+	velocity_label.text = "%d" % ammo
+	
+	if ammo < 5:
+		# if we have less than max ammo
+		if regen < max_regen:
+			# if the regeneration value is under the max, add to it.
+			regen += delta * 60
+			
+	if regen >= max_regen:
+		# if we reach the max regeneration value, add ammo and reset.
+		ammo += 1
+		regen = 0
 	
 	# Shoot
 	if Input.is_action_just_pressed("shoot"):
-		shoot()
+		print(regen)
+		if ammo > 0:
+			shoot()
 
 func _physics_process(delta: float) -> void:
 	pass # Replace with function body.
