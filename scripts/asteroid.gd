@@ -16,8 +16,8 @@ func _ready() -> void:
 	print("asteroid ready")
 	randomize()
 	
-	#speed = randf_range(MIN_SPEED, MAX_SPEED)
-	speed = 0
+	speed = randf_range(MIN_SPEED, MAX_SPEED)
+	#speed = 0
 	dir = randf_range(PI, -PI)
 	
 	# Make asteroid move at a constant velocity and not slow down.
