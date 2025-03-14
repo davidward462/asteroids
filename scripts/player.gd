@@ -5,7 +5,7 @@ extends CharacterBody2D
 var max_ammo = 5
 var ammo = max_ammo
 var regen = 0
-var max_regen = 60
+var max_regen = 30
 
 # for testing
 @onready var velocity_label: Label = $VelocityLabel
@@ -59,7 +59,6 @@ func _process(delta: float) -> void:
 	
 	# Shoot
 	if Input.is_action_just_pressed("shoot"):
-		print(regen)
 		if ammo > 0:
 			shoot()
 
