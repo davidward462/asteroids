@@ -19,7 +19,6 @@ func gen_asteroid_coords() -> Vector2:
 	var x = (randi() % (screen_x)-buffer ) + buffer
 	var y = (randi() % (screen_y)-buffer ) + buffer
 	var coords = Vector2(x, y)
-	print(coords)
 	return coords
 	
 func spawn_asteroid() -> void:
