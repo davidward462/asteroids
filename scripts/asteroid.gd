@@ -12,6 +12,7 @@ var speed
 var dir = 0.0
 
 func _ready() -> void:
+	#add_to_group("asteroids")
 	print("asteroid ready")
 	randomize()
 	
@@ -39,5 +40,5 @@ func _on_body_entered(body: Node) -> void:
 	
 	# temporary player death method.
 	# TODO: set up actual player death method. 
-	body.queue_free()
+	#body.queue_free()
 	#queue_free()
