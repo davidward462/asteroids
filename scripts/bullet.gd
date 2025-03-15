@@ -22,4 +22,7 @@ func _physics_process(delta: float) -> void:
 		queue_free()
 
 func _on_body_entered(body: Node2D) -> void:
+	# destroy asteroid that was hit.
+	body.queue_free()
+	# destroy self.
 	queue_free()
