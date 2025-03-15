@@ -1,7 +1,7 @@
 extends Area2D
 
 var speed = 700
-var energy = 45
+var energy = 50
 
 @onready var screen_size = get_viewport_rect().size
 
