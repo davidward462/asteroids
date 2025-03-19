@@ -16,5 +16,3 @@ shape = SubResource("CircleShape2D_iyuko")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, -1)
 texture = ExtResource("1_jet3x")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]

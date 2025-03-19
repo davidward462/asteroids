@@ -80,10 +80,6 @@ func _physics_process(delta: float) -> void:
 	# TODO: figure out collision.
 	#move_and_slide()
 	var collision = move_and_collide(velocity * delta)
-	
-	#if collision:
-		#print("collided with player")
-		#self.queue_free()
 		
 	# Wrap position on screen bounds
 	position.x = wrapf(position.x, 0, screen_size.x)
