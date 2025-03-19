@@ -4,7 +4,7 @@ extends Node2D
 @onready var asteroid_scene = load("res://scenes/asteroid.tscn")
 @onready var screen_size = get_viewport_rect().end
 
-var asteroid_count = 2
+var asteroid_count = 5
 
 func spawn_player(start_pos) -> void:
 	var player = player_scene.instantiate ()
